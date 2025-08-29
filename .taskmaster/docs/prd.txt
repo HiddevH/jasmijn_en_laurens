@@ -1,0 +1,190 @@
+# Overview
+This is a challenging riddle/puzzle web application created specifically for Jasmijn and Laurens' wedding. The app presents a series of increasingly difficult puzzles designed for highly intelligent, nerdy users. Successfully completing all challenges reveals the final reward number: "5". The application celebrates their wedding while providing an engaging, brain-teasing experience that matches their intellectual interests.
+
+# Core Features
+
+## Progressive Riddle System
+- Multiple riddles/puzzles of increasing difficulty
+- Each riddle must be solved to unlock the next one
+- Riddles should span different domains: logic, math, programming, cryptography, wordplay, visual puzzles
+- Save progress so users can return and continue where they left off
+- Prevent cheating/skipping ahead
+
+## Wedding-Themed Content
+- Minimal wedding celebration theme with elegant, romantic visual design
+- Wedding date (15-08-2025) may be used in mathematical puzzles
+- Generic celebration theme without personal references
+- Clean, sophisticated design reflecting the special occasion
+
+## Reward System
+- Final number "5" is revealed only after completing all riddles
+- Progressive hints system for stuck users
+- Celebration animation/message when final number is revealed
+- Optional: Easter eggs or bonus content for thorough exploration
+
+## User Experience Enhancements
+- Responsive design for mobile and desktop
+- Smooth animations and transitions
+- Audio feedback for correct/incorrect answers
+- Dark/light theme toggle for extended puzzle-solving sessions
+
+# User Experience
+
+## User Personas
+- Primary: Highly intelligent users who enjoy complex challenges
+- Secondary: Wedding guests who enjoy puzzles and brain teasers
+- Tertiary: Friends/family who want to participate in wedding celebration
+
+## Key User Flows
+1. Landing page with wedding celebration theme and introduction
+2. First riddle - easier to build confidence
+3. Progressive difficulty increase through 5-7 riddles
+4. Hint system when users get stuck (timer-based or manual request)
+5. Final reveal of number "5" with celebration
+6. Share/social features to show completion
+
+## UI/UX Considerations
+- Clean, elegant design reflecting wedding theme
+- Intuitive navigation between riddles
+- Clear progress indicators
+- Accessible design for various devices and abilities
+- Engaging but not overwhelming visual elements
+
+# Technical Architecture
+
+## System Components
+- Frontend: Modern web application (React/Vue.js)
+- State management for riddle progress and user sessions
+- Local storage for progress persistence
+- Responsive CSS framework
+- Animation library for smooth transitions
+
+## Data Models
+- Riddle structure (question, answer, hints, difficulty)
+- User progress tracking
+- Session management
+- Answer validation logic
+
+## APIs and Integrations
+- No external APIs required for core functionality
+- Optional: Simple analytics to track completion rates
+- Optional: Social sharing integration
+
+## Infrastructure Requirements
+- Static hosting (Netlify/Vercel/GitHub Pages)
+- Domain name for personalized URL
+- SSL certificate for security
+- Content Delivery Network for optimal performance
+
+# Development Roadmap
+
+## Phase 1: MVP Foundation
+- Basic web application structure with routing
+- Simple riddle display and answer input system
+- Progress tracking with local storage
+- Basic styling and responsive layout
+- 3 core riddles of varying difficulty
+- Final reward reveal (number "5")
+
+## Phase 2: Enhanced User Experience
+- Refined visual design with wedding theme
+- Smooth animations and transitions
+- Hint system implementation
+- Audio feedback for interactions
+- Additional 2-3 riddles for fuller experience
+- Progress indicators and navigation improvements
+
+## Phase 3: Polish and Optimization
+- Advanced styling and micro-interactions
+- Performance optimizations
+- Cross-browser testing and compatibility
+- Social sharing features
+- Easter eggs and bonus content
+- Mobile-first responsive refinements
+
+## Phase 4: Deployment and Launch
+- Production deployment setup
+- Custom domain configuration
+- Final testing across devices
+- Launch preparation and guest access
+- Analytics and monitoring setup
+
+# Logical Dependency Chain
+
+## Foundation First (Critical Path)
+1. Project setup and basic HTML/CSS/JS structure
+2. Routing system for riddle navigation
+3. Basic riddle display and answer validation
+4. Local storage for progress persistence
+5. Simple responsive layout
+
+## Rapid Prototyping (Quick Wins)
+1. First working riddle with answer input
+2. Basic progress tracking between riddles
+3. Final reward reveal functionality
+4. Simple styling for immediate visual appeal
+5. Core 3-riddle flow working end-to-end
+
+## Feature Enhancement (Build Upon)
+1. Advanced riddle types (visual, mathematical, cryptographic)
+2. Hint system with progressive disclosure
+3. Wedding theme styling (elegant, minimal design)
+4. Animation and transition effects
+5. Audio feedback and enhanced interactions
+
+## Quality and Deployment (Final Polish)
+1. Cross-device testing and optimization
+2. Performance improvements
+3. Production deployment pipeline
+4. Domain setup and SSL configuration
+5. Final testing and launch preparation
+
+# Risks and Mitigations
+
+## Technical Challenges
+- Risk: Riddles being too difficult or too easy
+- Mitigation: Start with moderate difficulty, implement hint system, get feedback from beta testers
+
+- Risk: Users getting permanently stuck
+- Mitigation: Progressive hint system, optional skip mechanisms after time delays
+
+- Risk: Cheating or answer sharing
+- Mitigation: Obfuscated answer storage, unique riddle variations, focus on experience over competition
+
+## MVP Scope Management
+- Risk: Feature creep delaying core functionality
+- Mitigation: Strict MVP definition focusing on 3-5 core riddles and basic functionality
+
+- Risk: Over-engineering the solution
+- Mitigation: Start with simple HTML/CSS/JS, avoid complex frameworks initially
+
+## Resource Constraints
+- Risk: Time pressure for wedding date
+- Mitigation: Prioritized development phases, MVP-first approach, progressive enhancement
+
+- Risk: Limited testing with actual users
+- Mitigation: Self-testing with similar puzzles, simple A/B testing of riddle difficulty
+
+# Appendix
+
+## Riddle Categories to Consider
+- Logic puzzles (Sudoku-style, pattern recognition)
+- Mathematical challenges (equations, sequences)
+- Wordplay and language puzzles
+- Programming/coding challenges (if appropriate for users)
+- Visual puzzles (image manipulation, hidden elements)
+- Cryptography and cipher challenges
+- Memory and observation tests
+
+## Technical Specifications
+- Target browsers: Modern Chrome, Firefox, Safari, Edge
+- Mobile responsive design (iOS Safari, Android Chrome)
+- Performance: < 3 second initial load time
+- Accessibility: WCAG 2.1 AA compliance
+- Storage: Local storage for progress, no server-side database required
+
+## Wedding Integration Ideas
+- Use wedding date (15-08-2025) as part of mathematical puzzles
+- Generic wedding celebration theme without personal details
+- Elegant visual design appropriate for a wedding celebration
+- Focus on puzzle quality rather than personal references

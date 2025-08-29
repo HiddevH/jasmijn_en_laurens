@@ -1,0 +1,139 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Initialize Project Structure and Development Environment",
+        "description": "Set up the basic project structure, package.json, and development tools for the wedding riddle web application",
+        "details": "Create package.json with modern web development dependencies (Vite/Webpack for bundling, HTML/CSS/JavaScript setup). Initialize folder structure: src/, public/, assets/. Set up development server configuration. Configure basic build scripts. Create index.html entry point with basic meta tags and responsive viewport settings. Initialize git repository if not already done.",
+        "testStrategy": "Verify project builds successfully, development server starts without errors, and basic HTML page loads in browser",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Implement Core Application Architecture and Routing",
+        "description": "Create the foundational JavaScript architecture with client-side routing for navigating between riddles",
+        "details": "Implement vanilla JavaScript or lightweight framework routing system to handle different riddle pages. Create main App class/module to manage application state. Set up route handling for: home page, individual riddle pages (riddle/1, riddle/2, etc.), final reward page. Create navigation history management. Implement basic page templates and view rendering system.",
+        "testStrategy": "Test navigation between different routes, verify browser back/forward buttons work correctly, ensure clean URLs and proper page state management",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "Design and Implement Progress Tracking System",
+        "description": "Create a robust system to track user progress through riddles using local storage",
+        "details": "Implement ProgressManager class with methods to save/load user progress to localStorage. Track: current riddle index, completed riddles array, timestamps, hint usage. Create progress validation to prevent skipping ahead. Implement session management with fallback for incognito mode. Add progress indicators in UI. Handle edge cases like cleared storage or corrupted data.",
+        "testStrategy": "Test progress persistence across browser sessions, verify anti-cheat mechanisms work, test edge cases like clearing browser data",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "in-progress",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Build Core Riddle Engine and Answer Validation",
+        "description": "Implement the riddle display system, answer input handling, and validation logic",
+        "details": "Create RiddleEngine class to manage riddle data structure: {id, question, answer, hints, difficulty, type}. Implement flexible answer validation supporting exact matches, case-insensitive, numeric ranges, regex patterns. Create answer input UI with support for text, numbers, multiple choice. Add real-time feedback for correct/incorrect answers. Implement riddle unlocking logic based on progress. Create riddle transition animations.",
+        "testStrategy": "Test various answer formats and edge cases, verify riddle unlocking sequence works correctly, test input validation and sanitization",
+        "priority": "high",
+        "dependencies": [
+          3
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Create Initial Riddle Content and Wedding-Themed Design",
+        "description": "Develop the first 3-5 riddles with progressive difficulty and implement elegant wedding-themed UI design",
+        "details": "Design 5 riddles with increasing difficulty: 1) Simple logic puzzle, 2) Math puzzle using wedding date (15-08-2025), 3) Wordplay/anagram, 4) Visual pattern recognition, 5) Cryptography challenge. Implement elegant CSS with wedding theme: soft color palette (whites, golds, pastels), elegant typography, subtle animations. Create responsive design for mobile/desktop. Add romantic visual elements without being overly personal.",
+        "testStrategy": "Test riddles with target audience for appropriate difficulty progression, verify responsive design across devices, validate wedding theme appropriateness",
+        "priority": "medium",
+        "dependencies": [
+          4
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Implement Progressive Hints System",
+        "description": "Build a hint system that provides progressive clues to help stuck users without giving away answers",
+        "details": "Create HintManager class with 2-3 progressive hints per riddle. Implement hint unlocking: timer-based (5-10 minutes) or manual request. Design hint UI with elegant reveal animations. Track hint usage in progress system. Create hint content that guides thinking without revealing answers. Add subtle penalty system or badge system for hint-free completion.",
+        "testStrategy": "Test hint progression timing, verify hints are helpful but not too revealing, test UI interactions and accessibility",
+        "priority": "medium",
+        "dependencies": [
+          5
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Build Final Reward Revelation System",
+        "description": "Create the climactic reveal of the number '5' with celebration animations and completion tracking",
+        "details": "Design celebration page revealing final number '5' with elegant animations: particle effects, fade-ins, congratulatory message. Create completion certificate or badge. Implement social sharing functionality (optional). Add statistics display: completion time, hints used, etc. Create memorable experience with wedding celebration theme. Store completion status and timestamp.",
+        "testStrategy": "Test final revelation sequence, verify animations work smoothly across devices, test completion tracking and statistics display",
+        "priority": "medium",
+        "dependencies": [
+          6
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Add Audio Feedback and Enhanced Interactions",
+        "description": "Implement subtle audio cues and enhanced user interaction feedback throughout the application",
+        "details": "Add subtle audio feedback: correct answer chime, incorrect buzzer, page transition sounds, celebration fanfare. Implement user preference toggle for audio on/off. Create hover effects, button press animations, smooth transitions between states. Add loading states and micro-interactions. Optimize for accessibility with proper ARIA labels and keyboard navigation.",
+        "testStrategy": "Test audio functionality across browsers, verify accessibility compliance, test with screen readers and keyboard-only navigation",
+        "priority": "low",
+        "dependencies": [
+          7
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "Implement Dark/Light Theme Toggle and Advanced Features",
+        "description": "Add theme switching capability and additional quality-of-life features for extended puzzle-solving sessions",
+        "details": "Implement theme toggle with smooth transitions between light/dark modes. Create dark theme color palette maintaining wedding elegance. Add theme preference persistence. Implement additional features: progress export/import, riddle reset option, easter eggs for thorough exploration. Add fullscreen mode for mobile devices. Create keyboard shortcuts for power users.",
+        "testStrategy": "Test theme switching across all pages and components, verify theme persistence, test additional features and shortcuts",
+        "priority": "low",
+        "dependencies": [
+          8
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Optimize Performance and Deploy Production Build",
+        "description": "Optimize application performance, create production build, and deploy to static hosting platform",
+        "details": "Optimize bundle size: code splitting, lazy loading, asset compression. Implement service worker for offline capability and faster loading. Set up deployment pipeline for Netlify/Vercel/GitHub Pages. Configure custom domain and SSL. Add performance monitoring and basic analytics. Create deployment documentation. Perform cross-browser testing (Chrome, Firefox, Safari, Edge). Optimize for Lighthouse score (performance, accessibility, SEO).",
+        "testStrategy": "Run performance audits with Lighthouse, test across multiple browsers and devices, verify deployment works correctly and domain is accessible",
+        "priority": "medium",
+        "dependencies": [
+          9
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-08-28T16:48:11.254Z",
+      "updated": "2025-08-28T17:12:18.598Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

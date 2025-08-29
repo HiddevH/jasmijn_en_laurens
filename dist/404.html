@@ -6,13 +6,15 @@
     <title>Bruiloft Raadsels - Een Feestelijke Uitdaging</title>
     <meta name="description" content="Een uitdagende raadsel web applicatie voor een speciale bruiloft viering">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <script type="module" crossorigin src="./assets/index-ChSOM3NE.js"></script>
+  <script type="module" crossorigin src="./assets/index-DWyB944r.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-Dq_DVyJA.css">
   <script>
     // Redirect SPA routes to index.html for GitHub Pages
     const path = window.location.pathname;
-    if (path !== '/') {
-      window.location.replace('/' + window.location.search + '#' + path);
+    const basePath = '/jasmijn_en_laurens/';
+    if (path !== basePath && path !== basePath + 'index.html') {
+      const route = path.replace(basePath, '/');
+      window.location.replace(basePath + '#' + route);
     }
   </script>
 </head>

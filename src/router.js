@@ -5,7 +5,7 @@ export class Router {
         this.currentRoute = null;
         
         // Detect if we're on GitHub Pages (or use hash routing)
-        this.useHashRouting = window.location.hostname.includes('github.io') || window.location.search.includes('gh-pages');
+        this.useHashRouting = window.location.hostname.includes('github.io');
         
         if (this.useHashRouting) {
             // Hash-based routing for GitHub Pages

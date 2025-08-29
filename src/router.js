@@ -4,10 +4,20 @@ export class Router {
         this.routes = new Map();
         this.currentRoute = null;
         
-        // Luister naar browser navigatie events
-        window.addEventListener('popstate', (e) => {
-            this.handleRoute(window.location.pathname);
-        });
+        // Detect if we're on GitHub Pages (or use hash routing)
+        this.useHashRouting = window.location.hostname.includes('github.io') || window.location.search.includes('gh-pages');
+        
+        if (this.useHashRouting) {
+            // Hash-based routing for GitHub Pages
+            window.addEventListener('hashchange', () => {
+                this.handleRoute(this.getHashPath());
+            });
+        } else {
+            // History API routing for local development
+            window.addEventListener('popstate', () => {
+                this.handleRoute(window.location.pathname);
+            });
+        }
         
         // Onderschep alle link en button clicks
         document.addEventListener('click', (e) => {
@@ -18,6 +28,11 @@ export class Router {
         });
     }
     
+    // Get path from hash or pathname
+    getHashPath() {
+        return window.location.hash.slice(1) || '/';
+    }
+    
     // Registreer een route met handler
     route(path, handler) {
         this.routes.set(path, handler);
@@ -26,9 +41,14 @@ export class Router {
     
     // Navigeer naar een route
     navigeren(path) {
-        // Update browser URL zonder page reload
-        window.history.pushState({}, '', path);
-        this.handleRoute(path);
+        if (this.useHashRouting) {
+            // Hash-based navigation for GitHub Pages
+            window.location.hash = path;
+        } else {
+            // History API navigation for local development
+            window.history.pushState({}, '', path);
+            this.handleRoute(path);
+        }
     }
     
     // Verwerk route change
@@ -64,7 +84,12 @@ export class Router {
     // Start de router
     start() {
         // Handle initial route
-        const currentPath = window.location.pathname || '/';
+        let currentPath;
+        if (this.useHashRouting) {
+            currentPath = this.getHashPath();
+        } else {
+            currentPath = window.location.pathname || '/';
+        }
         this.handleRoute(currentPath);
     }
 }

@@ -389,17 +389,25 @@ export class App {
             if (this.progressManager.markeerRaadselOpgelost(raadselNummer)) {
                 alert(`${result.message}\n\n🎉 Raadsel opgelost!`);
 
-                // Navigeer naar volgende raadsel of beloning
+                // Navigeer naar volgende raadsel of beloning via router
                 const totalRiddles = this.riddleEngine.getTotalRiddles();
                 if (raadselNummer < totalRiddles) {
                     setTimeout(() => {
-                        window.history.pushState({}, '', `/raadsel/${raadselNummer + 1}`);
-                        location.reload();
+                        // Use the router's navigation method instead of direct history manipulation
+                        if (window.router) {
+                            window.router.navigeren(`/raadsel/${raadselNummer + 1}`);
+                        } else {
+                            location.reload();
+                        }
                     }, 1500);
                 } else {
                     setTimeout(() => {
-                        window.history.pushState({}, '', '/beloning');
-                        location.reload();
+                        // Use the router's navigation method instead of direct history manipulation
+                        if (window.router) {
+                            window.router.navigeren('/beloning');
+                        } else {
+                            location.reload();
+                        }
                     }, 1500);
                 }
             } else {

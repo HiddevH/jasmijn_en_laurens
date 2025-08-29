@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const app = new App();
     const router = new Router();
     
-    // Maak app beschikbaar voor debugging
+    // Maak app en router beschikbaar voor debugging en navigation
     window.app = app;
+    window.router = router;
     
     // Debug functie voor ontwikkeling - toon alle antwoorden
     window.debugAnswers = () => {
